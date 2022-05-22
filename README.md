@@ -2,7 +2,7 @@
 
 Just some tidbits that might help you manage your tmux sessions.
 
-**REQUIREMENTS:** [*fzf*](https://github.com/junegunn/fzf) is required
+**REQUIREMENTS:** [*fzf*](https://github.com/junegunn/fzf)
 
 There are 4 operations available to you:
 1. killing the session (default: `prefix` + `C-k`)
