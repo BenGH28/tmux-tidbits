@@ -25,7 +25,17 @@
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-tmux bind C-k popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/kill-session.sh"
-tmux bind C-l popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/list-sessions.sh"
-tmux bind C-p popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/repos.sh"
-tmux bind C-n popup -E -h 3 -w 40 "$CURRENT_DIR/scripts/new-project.sh"
+source $CURRENT_DIR/scripts/util.sh
+
+default_kill_key="C-k"
+default_list_key="C-l"
+default_projects_key="C-p"
+default_new_key="C-n"
+default_projects_dir="$HOME/projects/"
+
+projects_dir=$(get_tmux_option "@projects_dir" "$default_projects_dir")
+
+tmux bind $(get_tmux_option "@kill-key" $default_kill_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/kill-session.sh"
+tmux bind $(get_tmux_option "@list-key" $default_list_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/list-sessions.sh"
+tmux bind $(get_tmux_option "@projects-key" $default_projects_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/repos.sh $projects_dir"
+tmux bind $(get_tmux_option "@new-key" $default_new_key) display-popup -E -h 3 -w 40 "$CURRENT_DIR/scripts/new-project.sh $projects_dir"

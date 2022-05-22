@@ -3,8 +3,6 @@
 # get better regex support for project name sanitization
 shopt -s extglob
 
-project_dir=$HOME/repos
-
 project_name=""
 repo_path=""
 
@@ -15,8 +13,8 @@ get_project_name() {
 }
 
 make_project_repo() {
-	repo_path="$project_dir/$project_name"
-	mkdir $repo_path
+	repo_path="$1/$project_name"
+	mkdir -p $repo_path
 }
 
 create_new_session() {
@@ -29,9 +27,9 @@ switch_to_session() {
 
 new() {
 	get_project_name
-	make_project_repo
+	make_project_repo $1
 	create_new_session
 	switch_to_session
 }
 
-new
+new $1
