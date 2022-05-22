@@ -35,7 +35,7 @@ default_projects_dir="$HOME/projects/"
 
 projects_dir=$(get_tmux_option "@projects_dir" "$default_projects_dir")
 
-tmux bind-key $(get_tmux_option "@kill-key" $default_kill_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/kill-session.sh"
-tmux bind-key $(get_tmux_option "@list-key" $default_list_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/list-sessions.sh"
-tmux bind-key $(get_tmux_option "@projects-key" $default_projects_key) display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/repos.sh $projects_dir"
-tmux bind-key $(get_tmux_option "@new-key" $default_new_key) display-popup -E -h 3 -w 40 "$CURRENT_DIR/scripts/new-project.sh $projects_dir"
+tmux bind-key $(get_tmux_option "@kill-key" "C-k") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/kill-session.sh"
+tmux bind-key $(get_tmux_option "@list-key" "C-l") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/list-sessions.sh"
+tmux bind-key $(get_tmux_option "@projects-key" "C-p") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/repos.sh $projects_dir"
+tmux bind-key $(get_tmux_option "@new-key" "C-n") display-popup -E -h 3 -w 40 "$CURRENT_DIR/scripts/new-project.sh $projects_dir"
