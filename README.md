@@ -26,14 +26,14 @@ then it will be created.
 - `@projects-dir`: `~/projects`
 
 ## Preview
-kill a session
+- kill a session
 ![image](https://user-images.githubusercontent.com/45215137/169681209-95713cb5-f514-494b-b411-52d4b7e34ae2.png)
 
-list a project
+- list a project
 ![image](https://user-images.githubusercontent.com/45215137/169681162-893b5180-8fa0-4cdc-bf9d-41cb338483cb.png)
 
-open a project 
+- open a project
 ![image](https://user-images.githubusercontent.com/45215137/169681121-45750275-98ac-4599-9b3f-84e64a63ad68.png)
 
-start a new project
+- start a new project
 ![image](https://user-images.githubusercontent.com/45215137/169681236-412ba4da-4af9-4959-951c-24b1e180a496.png)
