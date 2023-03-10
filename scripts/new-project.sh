@@ -15,6 +15,10 @@ get_project_name() {
 make_project_repo() {
 	repo_path="$1/$project_name"
 	mkdir -p $repo_path
+	curr_dir=$(pwd)
+	cd $repo_path
+	git init
+	cd $curr_dir
 }
 
 create_new_session() {
