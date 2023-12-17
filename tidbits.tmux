@@ -31,10 +31,10 @@ default_list_key="C-l"
 default_projects_key="C-p"
 default_new_key="C-n"
 default_projects_dir="$HOME/projects/"
-
 projects_dir=$(get_tmux_option "@projects_dir" "$default_projects_dir")
+win_width=$(get_tmux_option "@tidbit_win_width" 80)
 
-tmux bind-key $(get_tmux_option "@kill-key" "C-k") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/kill-session.sh"
-tmux bind-key $(get_tmux_option "@list-key" "C-l") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/list-sessions.sh"
-tmux bind-key $(get_tmux_option "@projects-key" "C-p") display-popup -E -h 10 -w 40 "$CURRENT_DIR/scripts/repos.sh $projects_dir"
-tmux bind-key $(get_tmux_option "@new-key" "C-n") display-popup -E -h 3 -w 40 "$CURRENT_DIR/scripts/new-project.sh $projects_dir"
+tmux bind-key $(get_tmux_option "@kill-key" "C-k") display-popup -E -h 10 -w $win_width "$CURRENT_DIR/scripts/kill-session.sh"
+tmux bind-key $(get_tmux_option "@list-key" "C-l") display-popup -E -h 10 -w $win_width "$CURRENT_DIR/scripts/list-sessions.sh"
+tmux bind-key $(get_tmux_option "@projects-key" "C-p") display-popup -E -h 10 -w $win_width "$CURRENT_DIR/scripts/repos.sh $projects_dir"
+tmux bind-key $(get_tmux_option "@new-key" "C-n") display-popup -E -h 3 -w $win_width "$CURRENT_DIR/scripts/new-project.sh $projects_dir"
