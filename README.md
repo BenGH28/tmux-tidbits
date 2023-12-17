@@ -24,6 +24,7 @@ then it will be created.
 - `@project-key`: `C-p`
 - `@new-key`: `C-n`
 - `@projects-dir`: `~/projects`
+- `@tidbit-win-width`: 80
 
 ## Preview
 - kill a session
