@@ -13,6 +13,8 @@ There are 4 operations available to you:
     - customize with option `@new-key`
 4. open an existing coding project in a session (default: `prefix` + `C-p`)
     - customize with option `@projects-key`
+5. clone an existing coding project in a session (default: `prefix` + `C-g`)
+    - customize with option `@clone-key`
 
 You can identify where `tmux-tidbits` looks for your coding projects
 by working with the option `@projects-dir`. If the directory doesn't exist
@@ -23,6 +25,7 @@ then it will be created.
 - `@list-key`: `C-l`
 - `@project-key`: `C-p`
 - `@new-key`: `C-n`
+- `@clone-key`: `C-g`
 - `@projects-dir`: `~/projects`
 - `@tidbit-win-width`: 80
 
