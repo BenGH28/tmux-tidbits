@@ -29,9 +29,12 @@ source "$CURRENT_DIR/scripts/util.sh"
 default_projects_dir="$HOME/projects/"
 projects_dir=$(get_tmux_option "@projects-dir" "$default_projects_dir")
 win_width=$(get_tmux_option "@tidbit-win-width" 80)
+win_height=$(get_tmux_option "@tidbit-win-height" 10)
 
-tmux bind-key "$(get_tmux_option "@kill-key" "C-k")" display-popup -E -h 10 -w "$win_width" "$CURRENT_DIR/scripts/kill-session.sh"
-tmux bind-key "$(get_tmux_option "@list-key" "C-l")" display-popup -E -h 10 -w "$win_width" "$CURRENT_DIR/scripts/list-sessions.sh"
-tmux bind-key "$(get_tmux_option "@projects-key" "C-p")" display-popup -E -h 10 -w "$win_width" "$CURRENT_DIR/scripts/repos.sh $projects_dir"
-tmux bind-key "$(get_tmux_option "@new-key" "C-n")" display-popup -E -h 3 -w "$win_width" "$CURRENT_DIR/scripts/new-project.sh new $projects_dir"
-tmux bind-key "$(get_tmux_option "@clone-key" "C-g")" display-popup -E -h 3 -w "$win_width" "$CURRENT_DIR/scripts/new-project.sh clone $projects_dir"
+tmux bind-key "$(get_tmux_option "@kill-key" "C-k")" display-popup -E -h "$win_height" -w "$win_width" "$CURRENT_DIR/scripts/kill-session.sh"
+tmux bind-key "$(get_tmux_option "@list-key" "C-l")" display-popup -E -h "$win_height" -w "$win_width" "$CURRENT_DIR/scripts/list-sessions.sh"
+tmux bind-key "$(get_tmux_option "@projects-key" "C-p")" display-popup -E -h "$win_height" -w "$win_width" "$CURRENT_DIR/scripts/repos.sh $projects_dir"
+
+input_height=3
+tmux bind-key "$(get_tmux_option "@new-key" "C-n")" display-popup -E -h "$input_height" -w "$win_width" "$CURRENT_DIR/scripts/new-project.sh new $projects_dir"
+tmux bind-key "$(get_tmux_option "@clone-key" "C-g")" display-popup -E -h "$input_height" -w "$win_width" "$CURRENT_DIR/scripts/new-project.sh clone $projects_dir"
